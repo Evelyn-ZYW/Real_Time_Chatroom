@@ -23,3 +23,7 @@
   text-align: center;
   margin: 20px auto;
 }
+.input-group-text {
+  min-width: 130px;
+  max-width: 130px;
+}
