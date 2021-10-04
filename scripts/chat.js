@@ -1,0 +1,1 @@
+// responsible for getting all the chat and data together

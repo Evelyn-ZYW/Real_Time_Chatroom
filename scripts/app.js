@@ -1,0 +1,1 @@
+// responsible for bringing chat.js & ui.js together, and running the application
