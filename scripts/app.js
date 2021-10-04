@@ -43,7 +43,7 @@ const username = localStorage.username ? localStorage.username : 'anon';
 
 // class instances
 const chatUI = new ChatUI(chatList);
-const chatroom = new Chatroom(username, 'gaming');
+const chatroom = new Chatroom(username, 'general');
 
 
 //get chats and render
