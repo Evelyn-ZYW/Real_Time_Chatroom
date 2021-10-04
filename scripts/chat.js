@@ -1,4 +1,4 @@
-// responsible for getting all the chat and data together
+// this document is responsible for getting all the chat and data together
 
 // adding new chat documents (new messages - called 'document' in firebase)
 // setting up a real-time listener to get new chats
@@ -24,10 +24,22 @@ class Chatroom {
     const response = await this.chats.add(chat);
     return response;
   }
+  // real-time listener to get new chats
+  getChats(callback){
+    this.chats
+      .onSnapshot(snapshot => {
+        snapshot.docChanges().forEach(change => {
+          if(change.type === 'added'){
+            //update the UI
+            callback(change.doc.data())
+          }
+        });
+      });
+  }
 }
 
 const chatroom = new Chatroom('gaming', 'shaun');
 
-chatroom.addChat('hello everyone')
-  .then(()=>console.log('chat added'))
-  .catch(err=>console.log(err));
+chatroom.getChats((data) => {
+  console.log(data);
+})
