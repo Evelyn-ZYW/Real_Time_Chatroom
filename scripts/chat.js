@@ -9,7 +9,7 @@ class Chatroom {
   constructor(username, room){
     this.username = username;
     this.room = room;
-    this.chats = db.collection('chat');
+    this.chats = db.collection('chats');
     this.unsub;
   }
   async addChat(message){
